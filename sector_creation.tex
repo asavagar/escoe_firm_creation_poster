@@ -4,13 +4,12 @@
             }
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{dateplot, statistics}
-
 \usepackage{amsmath}
 
 \begin{document}
-
 \begin{tikzpicture}
-    \begin{axis}[clip = false,
+    \begin{axis}[
+                clip = false,
                 ylabel style={align=center}, 
                 ylabel=,
                 legend pos= north west,
@@ -19,11 +18,11 @@
                 axis lines=left, 
                 grid = both,
                 legend style={
-                at={(0.1,1.3)},
-                draw=none,
-                fill=white,
-                legend columns=2,
-                },
+                        at={(0.1,1.3)},
+                        draw=none,
+                        fill=white,
+                        legend columns=2,
+                        },
                 width=0.9\textwidth,
                 height=10cm,
                 date coordinates in=x,
