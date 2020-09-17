@@ -1,0 +1,38 @@
+\documentclass[]{standalone}
+\usepackage{pgfplots,
+            pgfplotstable,
+            }
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{dateplot, statistics}
+
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+    \begin{axis}[clip=false,
+                very thick,
+                /pgf/number format/1000 sep={},
+                axis lines=left, 
+                grid = both,
+                width=0.9\textwidth,
+                height=10cm,
+                date coordinates in=x,
+                xticklabel={\day/\month},
+                xtick={2020-04-06, 2020-05-04, 2020-06-01, 2020-06-29, 2020-07-27},
+                xticklabel style={rotate=0, anchor=near xticklabel}
+                ]
+        \addplot+[no markers, black] table[x=date, y=Wales,col sep=comma] {lockdown_fall_by_coarse_region_ts.csv} node[above,pos=1] {Wal};
+
+        \addplot+[dotted, ultra thick, no markers] table[x=date, y=Northern Ireland,col sep=comma] {lockdown_fall_by_coarse_region_ts.csv} node[below,pos=1] {N.Ir};
+
+        \addplot+[no markers, dashed] table[x=date, y=England excl London,col sep=comma] {lockdown_fall_by_coarse_region_ts.csv} node[above,pos=1] {Eng};
+
+        \addplot+[no markers] table[x=date, y=London,col sep=comma] {lockdown_fall_by_coarse_region_ts.csv} node[above,pos=1] {Lon};
+
+        \addplot+[no markers] table[x=date, y=Scotland,col sep=comma] {lockdown_fall_by_coarse_region_ts.csv} node[above,pos=1] {Sco};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

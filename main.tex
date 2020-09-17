@@ -1,0 +1,100 @@
+\documentclass{beamer}
+%% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
+%% Possible orientations: portrait, landscape
+%% Font sizes can be changed using the scale option.
+\usepackage[size=a1,orientation=portrait,scale=1.8]{beamerposter}
+\usetheme{LLT-poster}
+\usecolortheme{ComingClean}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[scaled=0.92]{inconsolata}
+\usepackage[libertine]{newtxmath}
+\usepackage[subpreambles=true]{standalone}
+\author[a.savagar@kent.ac.uk]{Anthony Savagar}
+\title{UK Firm Creation During the Covid-19 Pandemic \\ \small Alfred Duncan, Miguel León-Ledesma, Anthony Savagar}
+\institute{University of Kent}
+
+\begin{document}
+  \begin{frame}{} 
+    \begin{block}{\large Main Messages}
+        \begin{itemize}
+            \item \alert{Aim:} Measure UK firm creation during Covid-19 pandemic to quantify supply-side disruption in real time. 
+            \item Firm creation fell sharply during March, April and May but recovered strongly during June and July.
+            \item Firm creation is important for productivity, wages and employment in the long run.
+        \end{itemize}
+    \end{block}
+    \begin{block}{\large Data}
+        \begin{itemize}
+        \item The UK company register is available from Companies House. It records every company registered in the UK.
+        \item The register is released monthly which allows us to record daily registrations over the previous month. 
+        \item We compare the monthly register release in 2020 with the equivalent monthly release in 2019.
+            \item \alert{Advantages:} Real-time; population-wide; detailed company location and sector; high-frequency (daily).
+            \item \alert{Disadvantages:} Few variables; short time series; death poorly measured; records all companies many will not produce.
+        \end{itemize}
+    \end{block}
+    % \vfill
+    \begin{columns}[t]
+      \begin{column}{.49\linewidth}
+        \begin{block}{Aggregate Plot}
+        \input{agg_creation}
+        \end{block}
+
+        \begin{block}{Region Plot}
+        \input{region_creation}
+        \end{block}
+        
+        \begin{block}{Sector Plot}
+        \input{sector_creation}
+      \end{block}
+      \end{column}
+      
+      \begin{column}{.49\linewidth}
+        \begin{block}{Aggregate Comment}
+          \begin{itemize}
+          \item Weekly business creation relative to 2019 (= 100). 
+          \item \alert{Timeline:} 23/03 lockdown begins. 11/05 re-opening begins.
+          \item There are three clear periods:
+          \begin{itemize}
+              \item \alert{Pre-lockdown:} weekly firm creation is equal to 2019. 
+              \item \alert{Severe lockdown:} Firm creation falls sharply in late March and remains low until late May.
+              \item \alert{Easing lockdown:} Firm creation exceeds its 2019 level consistently after late May.
+          \end{itemize}
+          \end{itemize}
+\vspace{0.3cm}
+        \end{block}
+
+        \begin{block}{Region Comment}
+          \begin{itemize}
+        %   \item England excludes London.
+          \item Cumulative business creation from March 23 (lockdown began) relative to the same period in 2019.
+          \item Business creation between 23 Mar - 06 Apr was near 50\% less for all countries than over the same period in 2019. 
+          \item Business creation between 23 Mar - 27 Jul was 10\% higher in London, 5\% lower in England (excl. Lon) and 20-30\% lower in Wales, Scotland and N Ireland.
+          \end{itemize}
+\vspace{2.4cm}
+        \end{block}
+        
+        \begin{block}{Sector Comment}
+          \begin{itemize}
+          \item Cumulative business creation from March 23 (lockdown began) relative to the same period in 2019.
+          \item Business creation between 23 Mar - 06 Apr was near 30\% less in most sectors and 50\% less in construction than over the same period in 2019.
+          \item Business creation between 23 Mar - 27 Jul was 50\% higher in wholesale \& retail and 20\% lower in construction relative to 2019.
+          \end{itemize}
+\vspace{1.25cm}
+        \end{block}
+
+      \end{column}
+    \end{columns}
+        \begin{block}{\large Implications}
+        \begin{itemize}
+            \item Firm creation has long-run effects on employment, productivity and growth.
+            \item From US evidence we know:
+            \begin{itemize}
+                \item New firms are net job creators: they create more jobs than they destroy.
+                % \item Firms created during downturn tend to grow less in the future.
+                \item New firms drive future productivity through their own innovation and through competitive effects on incumbents.
+            \end{itemize}  
+        \end{itemize}
+    \end{block}
+  \end{frame}
+\end{document}
